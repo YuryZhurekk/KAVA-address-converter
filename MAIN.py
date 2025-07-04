@@ -2,7 +2,7 @@ import bech32
 
 def eth_to_kava_address(eth_address):
     if not eth_address.startswith("0x"):
-        raise ValueError("Invalid Ethereum address")
+        raise ValueError("Invalid EVM address")
 
     eth_bytes = bytes.fromhex(eth_address[2:])
     converted_bits = bech32.convertbits(eth_bytes, 8, 5)
